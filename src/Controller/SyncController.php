@@ -30,27 +30,20 @@ class SyncController extends AbstractController {
       $entityManager = $this->getDoctrine()->getManager();
 
       if ($product) {
-        //          $product->setName($item->productName);
-        //          $product->setDescription($item->productDescription);
-        //          $product->setAsin($item->productASIN);
-        //          $product->setCategory(implode(",",$item->productCategories));
-        //          $product->setPrice($item->productPrice);
-
         $updateCount++;
       } else {
         $product = New Product();
-
-        $product->setName($item->productName);
-        $product->setDescription($item->productDescription);
-        $product->setAsin($item->productASIN);
-        $product->setCategory(implode(",",$item->productCategories));
-        $product->setPrice($item->productPrice);
-
-        $entityManager->persist($product);
-        $entityManager->flush();
-
         $createCount++;
       }
+
+      $product->setName($item->productName);
+      $product->setDescription($item->productDescription);
+      $product->setAsin($item->productASIN);
+      $product->setCategory(implode(",",$item->productCategories));
+      $product->setPrice($item->productPrice);
+
+      $entityManager->persist($product);
+      $entityManager->flush();
 
     }
 
