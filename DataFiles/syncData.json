@@ -36,7 +36,39 @@
   {
     "productName": "Item without description",
     "productDescription": "",
-    "productASIN": "B085XQRG2D",
+    "productASIN": "B095XQRG2D",
+    "productCategories": [
+      "Woman",
+      "Funny",
+      "Clothing"
+    ],
+    "productPrice": 18.95
+  },
+  {
+    "productName": "Item without ASIN",
+    "productDescription": "bla bla bla",
+    "productASIN": "",
+    "productCategories": [
+      "Woman",
+      "Clothing"
+    ],
+    "productPrice": 18.95
+  },
+  {
+    "productName": "",
+    "productDescription": "Item without name",
+    "productASIN": "B085XRRG2D",
+    "productCategories": [
+      "Woman",
+      "Funny",
+      "Clothing"
+    ],
+    "productPrice": 18.95
+  },
+  {
+    "productName": "testing after error",
+    "productDescription": "Item should be added after another item that had error",
+    "productASIN": "B085XRRG3D",
     "productCategories": [
       "Woman",
       "Funny",

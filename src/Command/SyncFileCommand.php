@@ -39,7 +39,8 @@ class SyncFileCommand extends Command {
     $result = $this->syncController->syncData();
 
     if($result['error']){
-      $io->error($result['message']);
+      $io->listing($result['message']);
+      $io->error('Process finished with Errors');
       return 1;
     }
 

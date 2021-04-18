@@ -14,6 +14,8 @@ use Symfony\Component\Finder\Finder;
 
 class SyncController extends AbstractController {
 
+  private $errorMessages = [];
+
   public function syncData(){
     $createCount = 0;
     $updateCount = 0;
@@ -25,6 +27,11 @@ class SyncController extends AbstractController {
     }
 
     foreach ($data as $item){
+
+      if ($this->validateProductItem($item)){
+        // if error found continue
+        continue;
+      }
 
       $product = $this->getDoctrine()->getRepository(Product::class)->findOneByAsinCode($item->productASIN);
       $entityManager = $this->getDoctrine()->getManager();
@@ -46,6 +53,15 @@ class SyncController extends AbstractController {
       $entityManager->flush();
 
     }
+
+    if ($this->errorMessages){
+      $this->errorMessages[] = sprintf('Created "%d" new products.', $createCount);
+      $this->errorMessages[] = sprintf('Updated "%d" products', $updateCount);
+      return [
+        'error' => 1,
+        'message' => $this->errorMessages
+      ];
+    } else
 
     return [
       'error' => 0,
@@ -95,4 +111,22 @@ class SyncController extends AbstractController {
     return $data;
 
   }
+
+  private function validateProductItem($item): int {
+    $error = 0;
+    if(!isset($item->productName) || $item->productName == ''){
+      $this->errorMessages['name'] = 'Product with invalid name';
+      $error = 1;
+    }
+    if(!isset($item->productASIN) || $item->productASIN == ''){
+      $this->errorMessages['ASIN'] = 'Product with invalid ASIN';
+      $error = 1;
+    }
+    if(!isset($item->productPrice) || $item->productPrice == ''){
+      $this->errorMessages['price'] = 'Product with invalid price';
+      $error = 1;
+    }
+    return $error;
+  }
+
 }
