@@ -10,7 +10,7 @@
     "productPrice": 20.99
   },
   {
-    "productName": "Running Socks",
+    "productName": "Running Socks test",
     "productDescription": "Running socks (3 pairs) designed specifically for medium and long distances; lightweight but strong materials provide comfort and stability; sophisticated Achilles reinforcement stabilises and cushions the back of the foot for added protection and safety!",
     "productASIN": "B07NDYXH8D",
     "productCategories": [
@@ -21,5 +21,27 @@
       "Socks"
     ],
     "productPrice": 13.89
+  },
+  {
+    "productName": "Sozial Distanziert Bevor Es Cool War Funny Introverted T-Shirt (German Language)",
+    "productDescription": "This fun T-shirt relating to flu, sniffing, etc. is perfect for anyone whose not panicked and doesn’t need to wear a mask or respirator. Gift idea for men, women, doctors, pharmacists, nurses. Hand wash only. Wash your hands with soap!",
+    "productASIN": "B085XQRG6D",
+    "productCategories": [
+      "Woman",
+      "Funny",
+      "Clothing"
+    ],
+    "productPrice": 18.95
+  },
+  {
+    "productName": "Item without description",
+    "productDescription": "",
+    "productASIN": "B085XQRG2D",
+    "productCategories": [
+      "Woman",
+      "Funny",
+      "Clothing"
+    ],
+    "productPrice": 18.95
   }
 ]
