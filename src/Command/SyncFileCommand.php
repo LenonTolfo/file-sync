@@ -8,6 +8,7 @@
 
 namespace App\Command;
 
+use App\Controller\SyncController;
 use App\Repository\ProductRepository;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -17,12 +18,12 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class SyncFileCommand extends Command {
 
-  private $productRepository;
+  private $syncController;
 
   protected static $defaultName = 'app:datafile:sync';
 
-  public function __construct(ProductRepository $productRepository) {
-    $this->productRepository = $productRepository;
+  public function __construct(SyncController $syncController) {
+    $this->syncController = $syncController;
 
     parent::__construct();
   }
@@ -35,7 +36,7 @@ class SyncFileCommand extends Command {
   {
     $io = new SymfonyStyle($input, $output);
 
-    $result = $this->productRepository->syncData();
+    $result = $this->syncController->syncData();
 
     if($result['error']){
       $io->error($result['message']);
