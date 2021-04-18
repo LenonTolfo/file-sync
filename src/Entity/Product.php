@@ -88,7 +88,7 @@ class Product
         return $this->category;
     }
 
-    public function setCategory(float $category): self
+    public function setCategory(string $category): self
     {
         $this->category = $category;
 

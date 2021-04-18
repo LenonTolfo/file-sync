@@ -1,0 +1,25 @@
+[
+  {
+    "productName": "Sturmhaube",
+    "productDescription": "Ob Berg, Bank oder Berghain - Die Sturmhaube ist multifunktionell uns seit über 150 Jahren bewährt!",
+    "productASIN": "BOO6YR2R72",
+    "productCategories": [
+      "Sport",
+      "Fetisch"
+    ],
+    "productPrice": 20.99
+  },
+  {
+    "productName": "Running Socks",
+    "productDescription": "Running socks (3 pairs) designed specifically for medium and long distances; lightweight but strong materials provide comfort and stability; sophisticated Achilles reinforcement stabilises and cushions the back of the foot for added protection and safety!",
+    "productASIN": "B07NDYXH8D",
+    "productCategories": [
+      "Sports",
+      "Running",
+      "Clothing",
+      "Men",
+      "Socks"
+    ],
+    "productPrice": 13.89
+  }
+]
